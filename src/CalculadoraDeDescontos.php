@@ -10,6 +10,10 @@ class CalculadoraDeDescontos
             return $orcamento->valor * .1;
         }
 
+        if($orcamento->valor > 500) {
+            return $orcamento->valor *.05;
+        }
+
         return 0;
     }
 }
