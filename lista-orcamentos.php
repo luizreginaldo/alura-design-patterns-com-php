@@ -26,7 +26,19 @@ $listaOrcamentos->addOrcamento($orcamento1);
 $listaOrcamentos->addOrcamento($orcamento2);
 $listaOrcamentos->addOrcamento($orcamento3);
 
+echo PHP_EOL. "========== Todos os Orçamentos" . PHP_EOL. PHP_EOL;
+
 foreach ($listaOrcamentos as $orcamento) {
+    echo "Valor: " . $orcamento->valor . PHP_EOL;
+    echo "Estado: " . get_class($orcamento->estadoAtual) . PHP_EOL;
+    echo "Qtd. Itens: " . $orcamento->quantidadeItens . PHP_EOL;
+
+    echo PHP_EOL;
+}
+
+echo "========== Orçamentos Finalizados" . PHP_EOL. PHP_EOL;
+
+foreach ($listaOrcamentos->orcamentosFinalizados() as $orcamento) {
     echo "Valor: " . $orcamento->valor . PHP_EOL;
     echo "Estado: " . get_class($orcamento->estadoAtual) . PHP_EOL;
     echo "Qtd. Itens: " . $orcamento->quantidadeItens . PHP_EOL;
