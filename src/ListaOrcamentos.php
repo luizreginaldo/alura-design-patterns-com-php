@@ -2,7 +2,11 @@
 
 namespace Alura\DesignPattern;
 
-class ListaOrcamentos
+use Exception;
+use JetBrains\PhpStorm\Internal\TentativeType;
+use Traversable;
+
+class ListaOrcamentos implements \IteratorAggregate
 {
     /**
      * @var Orcamento[]
@@ -19,8 +23,8 @@ class ListaOrcamentos
         $this->orcamentos[] = $orcamento;
     }
 
-    public function orcamentos(): array
+    public function getIterator()
     {
-        return $this->orcamentos;
+        return new \ArrayIterator($this->orcamentos);
     }
 }
